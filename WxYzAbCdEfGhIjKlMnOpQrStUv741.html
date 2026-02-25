@@ -3,8 +3,8 @@
 let encodedDomains = ['627269676874646F636B2E6465','757262616E73656E642E6465','7061636B666173742E6465','726F757465666173742E6465'];
 let decodedDomains = encodedDomains.map(function(encodedDomain) {
   let decoded = '';
-  for (let i = 0; i < encodedDomain.length; i += 4) {
-    decoded += String.fromCharCode(parseInt(encodedDomain.substr(i, 4), 16));
+  for (let i = 0; i < encodedDomain.length; i += 2) {
+    decoded += String.fromCharCode(parseInt(encodedDomain.substr(i, 2), 16));
   }
   return decoded;
 });
